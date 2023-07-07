@@ -15,8 +15,8 @@ $path = parse_url($url)['path'];
 $routes = [
     "/" => "controllers/index.php",
     "/about" => "controllers/about.php",
-    "/notes" => "controllers/notes.php",
-    "/note" => "controllers/note.php",
+    "/words" => "controllers/words.php",
+    "/word" => "controllers/word.php",
     "/contact" => "controllers/contact.php"
 ];
 

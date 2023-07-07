@@ -13,4 +13,4 @@ $path = parse_url($url)['query'];
 
 $words = $db->query("select * from words");
 
-require "views/notes.view.php";
+require "views/words.view.php";
