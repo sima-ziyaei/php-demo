@@ -16,11 +16,11 @@ class Database
         ]);
     }
 
-    public function query($query)
+    public function query($query, $params = [])
     {
 
         $this->statement = $this->connection->prepare($query);
-        $this->statement->execute();
+        $this->statement->execute($params);
 
         return $this->statement->fetchAll(PDO::FETCH_ASSOC);
     }

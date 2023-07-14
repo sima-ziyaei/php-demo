@@ -16,6 +16,7 @@ $routes = [
     "/" => "controllers/index.php",
     "/about" => "controllers/about.php",
     "/words" => "controllers/words.php",
+    "/words/create" => "controllers/word-create.php",
     "/word" => "controllers/word.php",
     "/contact" => "controllers/contact.php"
 ];

@@ -9,7 +9,7 @@
 
         <li>
 
-          <?= $word[0]['word'] ?>
+          <?=htmlspecialchars($word[0]['word']) ?>
 
         </li>
         <!-- <ol> -->
@@ -20,7 +20,7 @@
           <?php foreach ($trnaslation as $trans): ?>
 
             <li>
-              <?= $trans["translation"] ?>
+              <?= htmlspecialchars($trans["translation"]) ?>
             </li>
           <?php endforeach ?>
         <!-- </ol> -->
