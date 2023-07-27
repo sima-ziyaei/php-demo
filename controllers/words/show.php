@@ -20,4 +20,4 @@ if(!$word){
     abort();
 }
 
-require "views/word.view.php";
+require "views/words/show.view.php";

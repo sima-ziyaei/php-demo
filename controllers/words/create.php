@@ -1,5 +1,6 @@
 <?php
 require("Database.php");
+require("Validator.php");
 $config = require("config.php");
 $db = new Database($config);
 $heading = "Create Word";
@@ -7,24 +8,24 @@ $heading = "Create Word";
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $errors = [];
+    // $validator = new Validator();
 
-    if(strlen($_POST['word']) === 0){
-        $errors['word'] = 'A word is required';
+    if(! Validator::string($_POST['word'], 1, 15)){
+        $errors['word'] = 'the word is not valid';
     }
 
-    if(strlen($_POST['word']) > 15){
-        $errors['word'] = "The word can not be more than 15 characters";
-    }
+
 
     if(empty($errors)){
-        $db->query(
+       $res  = $db->query(
             'INSERT INTO words(word) VALUES(:word)',
             [
                 'word' => $_POST['word']
             ]
         );
-    }
 
+    }
+    // dd($res);
     // header("Location: /word?id=3");
     // die();
     
@@ -42,4 +43,4 @@ function getWord($db)
     $word = $db->query($query);
     dd($word);
 }
-require 'views/word-create.view.php';
+require 'views/words/create.view.php';

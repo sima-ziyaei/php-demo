@@ -3,8 +3,8 @@
 return [
     "/" => "controllers/index.php",
     "/about" => "controllers/about.php",
-    "/words" => "controllers/words.php",
-    "/word" => "controllers/word.php",
-    "/words/create" => "controllers/word-create.php",
+    "/words" => "controllers/words/index.php",
+    "/word" => "controllers/words/show.php",
+    "/words/create" => "controllers/words/create.php",
     "/contact" => "controllers/contact.php"
 ];
