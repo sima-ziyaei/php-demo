@@ -12,18 +12,11 @@
                 <form method="POST">
                     <div>
                         <label for="word">word:</p>
-
-                            <input id="word" class=" border border-solid border-black" name="word" type="text" value="<?= $_POST['word'] ?? '' ?>" />
+                        <input id="word" class=" border border-solid border-black" name="word" type="text" value="<?= $_POST['word'] ?? '' ?>" />
                     </div>
                     <p class="text-red-500"><?= $errors['word'] ?></p>
-                    <!-- <div>
-
-                        <lable for="translation">translation:</p>
-                            <textarea required id="translation" class="border border-solid border-black"
-                                name="translation"></textarea>
-                    </div> -->
+                  
                     <div>
-
                         <button type="submit">create</button>
                     </div>
                 </form>

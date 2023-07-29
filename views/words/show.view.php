@@ -9,21 +9,29 @@
 
         <li>
 
-          <?=htmlspecialchars($word[0]['word']) ?>
+          <?= htmlspecialchars($word[0]['word']) ?>
 
         </li>
         <!-- <ol> -->
-          <?php if($trnaslation): ?> 
-            
-            <p>translations:</p>
-         <?php endif ?>
-          <?php foreach ($trnaslation as $trans): ?>
+        <?php if ($trnaslation): ?>
 
-            <li>
-              <?= htmlspecialchars($trans["translation"]) ?>
-            </li>
-          <?php endforeach ?>
+          <p>translations:</p>
+        <?php endif ?>
+        <?php foreach ($trnaslation as $trans): ?>
+
+          <li>
+            <?= htmlspecialchars($trans["translation"]) ?>
+          </li>
+        <?php endforeach ?>
         <!-- </ol> -->
+        <form method="POST">
+          <div>
+            <lable for="translation">translation:</p>
+              <textarea required id="translation" class="border border-solid border-black"
+                name="translation"></textarea>
+          </div>
+          <button type="submit">create</button>
+        </form>
 
         <a href="/words" class="text-blue-500 hover:underline">back</a>
 
