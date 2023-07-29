@@ -15,19 +15,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
 
-
     if(empty($errors)){
-       $res  = $db->query(
+       $db->query(
             'INSERT INTO words(word) VALUES(:word)',
             [
                 'word' => $_POST['word']
             ]
         );
-
+        
     }
-    // dd($res);
-    // header("Location: /word?id=3");
-    // die();
+    $res = $db->lastInsertId();
+    header("Location: /word?id=$res");
+
     
     // $db->query('INSERT INTO translations(translation) VALUES(:translation)',
     // [
@@ -36,11 +35,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // ]);
 }
 
-function getWord($db)
-{
 
-    $query = "select * from words where word = {$_POST['word']}";
-    $word = $db->query($query);
-    dd($word);
-}
 require 'views/words/create.view.php';

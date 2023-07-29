@@ -13,7 +13,7 @@ $url = $_SERVER["REQUEST_URI"];
 $path = parse_url($url)['path'];
 
 $routes = [
-    "/" => "controllers/words/index.php",
+    "/" => "controllers/index.php",
     "/about" => "controllers/about.php",
     "/words" => "controllers/words/index.php",
     "/words/create" => "controllers/words/create.php",
