@@ -19,6 +19,8 @@
                     <div>
                         <button type="submit">create</button>
                     </div>
+
+                    <a href="/words" class="text-blue-500 hover:underline">back</a>
                 </form>
             </div>
         </div>

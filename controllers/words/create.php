@@ -1,8 +1,8 @@
 <?php
-spl_autoload_register( function ($class){
-    require base_path("Core/{$class}.php");
- });
- 
+
+use Core\Database;
+use Core\Validator;
+
 require base_path("Core/Validator.php");
 $config = require base_path("config.php");
 $db = new Database($config); 

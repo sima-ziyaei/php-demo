@@ -1,8 +1,6 @@
 <?php
-spl_autoload_register( function ($class){
-    require base_path("Core/{$class}.php");
- });
- 
+
+use Core\Database;
 
 $config = require base_path("config.php");
 $db = new Database($config);

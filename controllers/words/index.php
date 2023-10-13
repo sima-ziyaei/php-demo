@@ -1,8 +1,10 @@
 <?php
 
-spl_autoload_register( function ($class){
-    require base_path("Core/{$class}.php");
- });
+use Core\Database;
+
+// spl_autoload_register( function ($class){
+//     require base_path("Core/{$class}.php");
+//  });
  
 
 $config = require base_path("config.php");
