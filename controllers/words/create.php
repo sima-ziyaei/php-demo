@@ -1,9 +1,11 @@
 <?php
-require("Database.php");
-require("Validator.php");
-$config = require("config.php");
-$db = new Database($config);
-$heading = "Create Word";
+spl_autoload_register( function ($class){
+    require base_path("Core/{$class}.php");
+ });
+ 
+require base_path("Core/Validator.php");
+$config = require base_path("config.php");
+$db = new Database($config); 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -29,4 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 
-require 'views/words/create.view.php';
+view("words/create.view.php", [
+    'heading' => 'Create Word',
+    'errors' => $errors
+]);

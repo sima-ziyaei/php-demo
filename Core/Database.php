@@ -11,7 +11,7 @@ class Database
 
         $dsn = "mysql:" . http_build_query($config, "", ";");
 
-        $this->connection = new PDO($dsn, "admin", "Sima@7979119-Ziyaei", [
+        $this->connection = new PDO($dsn, "sima", "Sima@7979119", [
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
         ]);
     }

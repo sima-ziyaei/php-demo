@@ -1,10 +1,11 @@
 <?php
-require("Database.php");
+spl_autoload_register( function ($class){
+    require base_path("Core/{$class}.php");
+ });
+ 
 
-$config = require("config.php");
+$config = require base_path("config.php");
 $db = new Database($config);
-
-$heading = "Word";
 
 $id = $_GET['id'];
 
@@ -12,7 +13,7 @@ $query = "select * from words where id = {$id}";
 $query_translation = "select * from translations where word_id = {$id}";
 
 $word = $db->query($query);
-$trnaslation = $db->query(($query_translation));
+$translation = $db->query(($query_translation));
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $db->query(
@@ -28,4 +29,8 @@ if (!$word) {
     abort();
 }
 
-require "views/words/show.view.php";
+view("words/show.view.php", [
+    'heading' => 'Word',
+    'word' => $word,
+    'translation' => $translation
+]);
