@@ -13,11 +13,11 @@
 
         </li>
         <!-- <ol> -->
-        <?php if ($translation): ?>
+        <?php if ($translation) : ?>
 
           <p>translations:</p>
         <?php endif ?>
-        <?php foreach ($translation as $trans): ?>
+        <?php foreach ($translation as $trans) : ?>
 
           <li>
             <?= htmlspecialchars($trans["translation"]) ?>
@@ -27,10 +27,15 @@
         <form method="POST">
           <div>
             <lable for="translation">translation:</p>
-              <textarea required id="translation" class="border border-solid border-black"
-                name="translation"></textarea>
+              <textarea required id="translation" class="border border-solid border-black" name="translation"></textarea>
           </div>
           <button type="submit">create</button>
+        </form>
+
+        <form method="POST" class="mt-6">
+          <input type="hidden" name="id" value="<?= $word['id'] ?>" />
+          <button class="text-sm text-red-500">Delete</button>
+
         </form>
 
         <a href="/words" class="text-blue-500 hover:underline">back</a>
