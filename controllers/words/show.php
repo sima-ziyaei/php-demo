@@ -5,16 +5,6 @@ use Core\Database;
 $config = require base_path("config.php");
 $db = new Database($config);
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-    $db->query('delete from words where id = :id',[
-        'id' => $_GET['id']
-    ]);
-
-    header('location: /words');
-    exit();
-
-} else {
 
     $id = $_GET['id'];
 
@@ -43,4 +33,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'word' => $word,
         'translation' => $translation
     ]);
-}
