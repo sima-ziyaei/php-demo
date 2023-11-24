@@ -32,12 +32,16 @@
           <button type="submit">create</button>
         </form>
 
+        <footer class="mt-6">
+          <a class="text-gray-500 border border-gray-500 border-solid px-3 py-2 rounded " href="/word/edit?id=<?= $word[0]['id'] ?>" >Edit</a>
+        </footer>
+
         <form method="POST" class="mt-6">
           <input type="hidden" name="_method" value="DELETE" />
           <input type="hidden" name="id" value="<?= $word['id'] ?>" />
           <button class="text-sm text-red-500">Delete</button>
-
         </form>
+
 
         <a href="/words" class="text-blue-500 hover:underline">back</a>
 

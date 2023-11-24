@@ -6,9 +6,9 @@ use PDO;
 
 class Database
 {
-
+    
     public $connection;
-    public $statement;
+        public $statement;
 
     public function __construct($config)
     {
@@ -41,7 +41,7 @@ class Database
         $result  = $this->find();
 
         if( !$result){
-            abort();
+        abort();
         }
 
         return $result;

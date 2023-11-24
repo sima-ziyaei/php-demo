@@ -17,6 +17,9 @@ $router->get("/words","controllers/words/index.php");
 $router->get("/word","controllers/words/show.php");
 $router->post("/word","controllers/words/show.php");
 
+$router->get("/word/edit","controllers/words/edit.php");
+$router->patch("/word","controllers/words/update.php");
+
 $router->delete("/word","controllers/words/destroy.php");
 
 $router->post("/words/create","controllers/words/store.php");
